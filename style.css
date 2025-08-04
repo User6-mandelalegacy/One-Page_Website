@@ -234,73 +234,6 @@ ul {
   font-size: 0.95rem;
 }
 
-/* Impact Section */
-.impact-section {
-  background-color: #f2f2f2;
-  padding: 4rem 1rem;
-  text-align: center;
-}
-.impact-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #180636;
-}
-.impact-statement {
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  color: #333;
-}
-.impact-highlights {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-.impact-card {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 300px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-.impact-card:hover {
-  transform: translateY(-5px);
-}
-.impact-card img {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 1rem;
-}
-.impact-card h3 {
-  color: #2d3196;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-.impact-card p {
-  font-size: 1rem;
-  color: #555;
-}
-
-
-.sdg-icon {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.sdg-icon:hover {
-  transform: scale(1.1);
-}
-
-
 
 /* Why South Africa Section */
 .why-sa {
@@ -325,43 +258,6 @@ ul {
   color: #4CAF50;
   position: absolute;
   left: -25px;
-}
-
-/* Call to Action Section */
-.call-to-action {
-  background: linear-gradient(135deg, #0d47a1, #1976d2);
-  color: #fff;
-  text-align: center;
-  padding: 60px 20px;
-}
-.call-to-action h2 {
-  font-size: 2rem;
-}
-.call-to-action p {
-  font-size: 1.1rem;
-  margin: 20px 0;
-}
-.call-to-action .btn-primary {
-  background: #fff;
-  color: #1976d2;
-  border: none;
-  padding: 12px 28px;
-  font-weight: 600;
-  font-size: 1rem;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-.call-to-action .btn-primary:hover {
-  background: #e3f2fd;
-}
-.call-to-action .contact-info {
-  margin-top: 30px;
-  font-size: 1rem;
-}
-.call-to-action .contact-info a {
-  color: #fff;
-  text-decoration: underline;
 }
 
 /* Partner Logos Section */
@@ -2483,6 +2379,7 @@ html {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+
 /* Responsive design */
 @media (max-width: 768px) {
   .hero {
@@ -2605,3 +2502,20 @@ html {
     top: auto;
   }
 }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(24, 6, 54, 0.7) 0%,
+    rgba(16, 4, 40, 0.5) 50%,
+    rgba(24, 6, 54, 0.7) 100%
+  );
+  z-index: 1;
+}
+
