@@ -1371,10 +1371,6 @@ ul {
   color: #3C7AFC;
 }
 
-.service-card:nth-child(2) .service-icon i,
-.service-card:nth-child(4) .service-icon i {
-  color: #7F7EEB;
-}
 
 .service-card h2 {
   font-size: 1.5rem;
@@ -2131,6 +2127,7 @@ html {
   justify-content: center;
   margin: 0 auto 20px auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
 }
 
 .pillar-icon i {
@@ -2141,6 +2138,7 @@ html {
 
 .pillar:hover .pillar-icon i {
   transform: scale(1.1);
+   box-shadow: 0 8px 20px rgba(60, 122, 252, 0.3);
 }
 .pillars-description {
   font-size: 1.1rem;
@@ -2517,5 +2515,24 @@ html {
     rgba(24, 6, 54, 0.7) 100%
   );
   z-index: 1;
+}
+
+/* Hide the list entirely */
+.pillar-details {
+  display: none !important;
+}
+
+/* Always show the paragraph */
+.pillar-description-initial {
+  opacity: 1 !important;
+}
+
+/* Prevent hover from changing content */
+.pillar:hover .pillar-description-initial {
+  opacity: 1 !important;
+}
+
+.pillar:hover .pillar-details {
+  display: none !important;
 }
 
