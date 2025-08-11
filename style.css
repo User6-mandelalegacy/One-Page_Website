@@ -2013,29 +2013,21 @@ html {
 }
 
 .pillar-content {
-  position: relative;
-  height: 100px; /* Set a fixed height or adjust as needed */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  gap: 15px;
+  padding-top: 10px;
 }
 
 .pillar-description-initial {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  transition: opacity 0.3s ease;
   color: #555;
   font-size: 1rem;
   text-align: center;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
+
 
 .pillar-details {
   position: absolute;
@@ -2683,4 +2675,591 @@ html {
   .team-member p {
     font-size: 0.75rem;
   }
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--brand-navy);
+  background-color: var(--brand-white);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--brand-navy);
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--brand-dark-blue);
+  line-height: 1.3;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--brand-navy);
+  line-height: 1.4;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: white;
+  line-height: 1.6;
+}
+
+.nav-links li a {
+  color: var(--brand-navy);
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.cta-buttons .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: var(--brand-white);
+  background: var(--brand-blue);
+  border: none;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cta-buttons .btn {
+  background: #3C7AFC;
+  color: white;
+  border: none;
+}
+
+.cta-buttons .btn:hover {
+  background: #2d3196;
+  transform: translateY(-2px);
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+
+
+#about-section {
+  background: linear-gradient(135deg, #180636, #3c7afc); /* Dark blue to blue */
+  color: #ffffff; /* Default text color */
+  font-family: 'Montserrat', sans-serif;
+  padding: 60px 20px;
+  box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#about-section h2,
+#about-section h3 {
+  color: #ffffff; /* Headings white */
+}
+
+#about-section p,
+#about-section li {
+  color: #f5f5f5; /* Light grey for better readability */
+}
+
+#about-section .content-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+#about-section .content-block {
+  flex: 1 1 45%;
+  background-color: rgba(255, 255, 255, 0.05); /* Transparent block */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#about-section .pillar {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+#about-section .pillar:hover {
+  transform: translateY(-5px);
+}
+
+.about-hero {
+  background: linear-gradient(135deg, #180636, #3c7afc);
+
+  color: #f0f0f5; /* Light gray for readability */
+  padding: 4rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.about-hero h2.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ffffff; /* Bright white title */
+}
+
+.about-hero .hero-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #e0e0e0;
+}
+
+.about-hero .hero-description strong {
+  display: block;
+  margin-top: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+
+#services-section {
+  background: linear-gradient(135deg, #180636, #3c7afc);
+  color: #ffffff; /* fallback text */
+  font-family: 'Montserrat', sans-serif;
+  padding: 60px 20px;
+  box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#services-section h2 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#services-section .section-intro {
+  color: #e0e0e0;
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Grid for service cards */
+#services-section .services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Individual service card styling */
+#services-section .service-card {
+  flex: 1 1 300px;
+  background-color: rgba(255, 255, 255, 0.08); /* translucent white */
+  color: #000000; /* black text for readability */
+  padding: 25px 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Hover effect on cards */
+#services-section .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon style inside cards */
+#services-section .service-icon {
+  font-size: 3.5rem;
+  color: #180636; /* dark navy for icons */
+  margin-bottom: 15px;
+}
+
+/* Card titles */
+#services-section .service-card h3 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #180636; /* match icon color */
+}
+
+/* Card paragraph text */
+#services-section .service-card p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #222222; /* dark text for readability */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  #services-section .services-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+#services-section,
+#services-section h2,
+#services-section h3,
+#services-section p,
+#services-section .section-intro,
+#services-section .service-card h3,
+#services-section .service-card p {
+  color: #ffffff !important;
+}
+
+.services-section {
+  background-color: #3C7AFC; /* Blue background */
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.services-section h2,
+.services-section h3,
+.services-section p {
+  color: white;
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.05); /* Light transparent card */
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon i {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Meet the Team Section Background */
+.team-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #0a0f2c, #3C7AFC); /* dark navy to brand blue */
+  text-align: center;
+  color: #ffffff;
+}
+.team-section h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.main-header {
+  background: linear-gradient(135deg, #180636, #3c7afc); /* Dark blue to blue */
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+nav ul.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul.nav-links li a {
+  color: #ffffff; /* White links */
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+nav ul.nav-links li a:hover,
+nav ul.nav-links li a:focus {
+  color: #3c7afc; /* Bright blue on hover */
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.why-sa {
+  background: #f8f9ff;
+  padding: 4rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #180636;
+}
+
+.why-sa h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #3C7AFC;
+}
+
+.why-list {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.why-list li {
+  background: #ffffff;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-left: 6px solid #3C7AFC;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.why-sa {
+  background: linear-gradient(135deg, #180636, #3C7AFC);
+  padding: 4rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+}
+
+.why-sa h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.why-list {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.why-list li {
+  background: rgba(255, 255, 255, 0.06); /* Transparent white for cards */
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-left: 6px solid #3C7AFC;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #f0f0f0;
+}
+
+.partners-section {
+  background: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: black;
+}
+
+.partners-section h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: black;
+}
+
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.partners-logos a {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.partners-logos a:hover {
+  transform: scale(1.05);
+}
+
+.partners-logos img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Section Wrapper */
+.why-sa {
+  background: #ffffff;
+  padding: 60px 20px;
+}
+
+.why-sa h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, #3b82f6, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient Paragraph Block */
+.why-intro {
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.why-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* List Block */
+.why-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+}
+
+.why-list li {
+  background: #f8fafc;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.why-list li:hover {
+  background: #e0f2fe;
+  transform: translateY(-3px);
+}
+
+.why-icon {
+  width: 24px;       /* size of your icons */
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;    /* prevent shrinking */
+}
+
+.why-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+}
+
+.why-list li {
+  background: #f8fafc;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.why-list li:hover {
+  background: #e0f2fe;
+  transform: translateY(-3px);
+}
+
+.why-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.why-list li::before {
+  content: none !important;
+}
+
+.why-sa h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  background: none;                  /* remove gradient background */
+  -webkit-background-clip: unset;  /* reset */
+  -webkit-text-fill-color: black;  /* make text black */
+  color: black;                     /* fallback */
+}
+
+
+#services-section {
+  scroll-margin-top: 80px; /* or your header height */
+}
+
+.why-icon {
+  background-color: #e0f2fe; /* soft blue that matches hover bg */
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 34px;  /* increase size a bit to include padding */
+  height: 34px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
