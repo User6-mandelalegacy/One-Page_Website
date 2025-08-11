@@ -3263,3 +3263,167 @@ nav ul.nav-links li a:focus {
   object-fit: contain;
   flex-shrink: 0;
 }
+
+
+.section-title {
+  font-size: 2.2rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 30px !important;
+  text-align: center !important;
+  /* border-bottom: 3px solid #3C7AFC !important; */ /* Removed underline */
+  padding-bottom: 0 !important;  /* Remove padding-bottom since no border */
+  display: inline-block !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  box-shadow: none !important;
+}
+
+/* ===============================
+   GLOBAL TYPOGRAPHY SYSTEM
+================================= */
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: var(--brand-navy);
+  background-color: var(--brand-white);
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: 2.5rem; /* ~40px */
+}
+
+h2 {
+  font-size: 2.2rem; /* ~35px */
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem; /* ~24px */
+  font-weight: 600;
+}
+
+/* Paragraphs & Lists */
+p, li {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/* ===============================
+   SECTION TITLE STYLING
+================================= */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.dark-bg .section-title {
+  color: #ffffff;
+}
+
+.light-bg .section-title {
+  color: var(--brand-navy);
+}
+
+/* ===============================
+   NAVIGATION
+================================= */
+.nav-links li a {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+nav ul.nav-links li a:hover,
+nav ul.nav-links li a:focus {
+  color: #3c7afc;
+}
+
+/* ===============================
+   BUTTONS
+================================= */
+.cta-buttons .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+  background: #3C7AFC;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-buttons .btn:hover {
+  background: #2d3196;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   SECTION BACKGROUNDS & COLORS
+================================= */
+.dark-bg {
+  background: linear-gradient(135deg, #180636, #3c7afc);
+  color: #ffffff;
+}
+
+.light-bg {
+  background: #ffffff;
+  color: var(--brand-navy);
+}
+
+.gradient-block {
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+/* ===============================
+   ICON STYLING
+================================= */
+.icon-circle {
+  background-color: #e0f2fe;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Strong, final override for those two sections */
+#why-south-africa h2.section-title,
+.why-sa h2.section-title,
+.partners-section h2.section-title,
+#our-partners h2.section-title {
+  color: darkblue !important;
+}
