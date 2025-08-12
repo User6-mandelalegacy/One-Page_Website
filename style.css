@@ -3427,3 +3427,124 @@ nav ul.nav-links li a:focus {
 #our-partners h2.section-title {
   color: darkblue !important;
 }
+
+/* Hide hamburger by default */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+/* Mobile nav links hidden by default */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links.show {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  nav ul.nav-links {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(135deg, #180636, #3c7afc);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+  }
+
+  nav ul.nav-links li {
+    margin: 1rem 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+@media (max-width: 992px) {
+  .content-grid,
+  .pillar-grid,
+  .services-grid,
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-grid,
+  .pillar-grid,
+  .services-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* The grid container */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* The card itself */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: white; /* Or your theme color */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+  /* Ensure it grows with content */
+  height: auto;
+  min-height: 200px;
+}
+
+/* Text should wrap, never overflow */
+.service-card h3,
+.service-card p {
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Images scale with the card */
+.service-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Adjust for small screens */
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.service-card {
+  height: auto !important;
+  min-height: unset !important;
+  overflow: visible !important;
+}
+
