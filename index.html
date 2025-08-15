@@ -301,23 +301,13 @@ We operate within a partnership ecosystem, known as “our-community,” to prom
 <!-- Footer (Contact Section) -->
   <footer id="contact-section" class="site-footer">
     <div class="container footer-content">
-      <div class="footer-logo">
-        <img src="Images\Full_Logo.png" alt="Mandela Legacy Logo" />
-      </div>
       <div class="footer-contact">
         <h3>Contact Us</h3>
         <p>Phone: +27 015 001 0786</p>
         <p>Email: <a href="mailto:info@mandelalegacy.com">info@mandelalegacy.com</a></p>
         <p>66 Albert Road, Woodstock, A401, Level 4, Woodstock Exchange, Cape Town, Western Cape, South Africa, 8001</p>
       </div>
-      <div class="footer-nav">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#home-section">Home</a></li>
-          <li><a href="#about-section">About</a></li>
-          <li><a href="#services-section">Services</a></li>
-        </ul>
-      </div>
+      
       <div class="footer-social">
         <h3>Follow Us</h3>
         <a href="https://www.linkedin.com/company/mandela-legacy/" target="_blank">
@@ -356,12 +346,22 @@ We operate within a partnership ecosystem, known as “our-community,” to prom
   </script>
 
 <script>
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
 function toggleMenu() {
-  document.querySelector('.nav-links').classList.toggle('show');
+  navLinks.classList.toggle('show');
+  hamburger.classList.toggle('active'); // toggles X animation
 }
+
+// Close menu when a nav link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+    hamburger.classList.remove('active');
+  });
+});
 </script>
-
-
 
 
 </body>

@@ -3685,4 +3685,108 @@ nav ul.nav-links li a:focus {
 }
 
 
+header.main-header .logo {
+  max-height: none !important;
+  height: 110px !important; /* bigger than natural size */
+  width: auto !important;
+  object-fit: contain;
+}
 
+
+section {
+  scroll-margin-top: 130px; /* matches header height */
+}
+
+#services-section {
+  scroll-margin-top: 130px; /* Adjust for your header height */
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  header.main-header {
+    padding: 0.5rem 0; /* reduce vertical padding */
+  }
+
+  header.main-header .logo {
+    height: 80px !important; /* smaller logo */
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  header.main-header {
+    padding: 0.3rem 0; /* more compact */
+  }
+
+  header.main-header .logo {
+    height: 60px !important; /* smaller logo for mobile */
+  }
+
+  /* Optional: reduce nav link font size */
+  nav ul.nav-links li a {
+    font-size: 0.9rem;
+  }
+}
+
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap; /* allow logos to move to next line on small screens */
+  justify-content: center; /* center logos horizontally */
+  align-items: center;
+  gap: 30px; /* space between logos */
+}
+
+.partners-logos a {
+  display: inline-block;
+  max-width: 180px; /* max width of each logo */
+  flex: 1 1 150px; /* flexible width for responsiveness */
+}
+
+.partners-logos img {
+  width: 100%; /* makes the logo fill its container */
+  height: auto; /* keeps aspect ratio */
+  object-fit: contain; /* prevent stretching */
+}
+
+/* Optional adjustments for smaller screens */
+@media (max-width: 768px) {
+  .partners-logos {
+    gap: 20px;
+  }
+
+  .partners-logos a {
+    flex: 1 1 120px;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-logos a {
+    flex: 1 1 100px;
+    max-width: 120px;
+  }
+}
+
+/* When hamburger has 'active' class, transform bars into X */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0; /* hide middle bar */
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 40px; /* smaller gap for mobile */
+  }
+
+  #services-section {
+      scroll-margin-top: 40px; /* smaller gap for mobile */
+  }
+}
