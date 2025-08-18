@@ -4160,3 +4160,11 @@ section {
   }
 }
 
+.hero {
+  /* Fallback gradient while images load */
+  background: linear-gradient(135deg, #180636, #3C7AFC);
+  position: relative;
+  width: 100%;
+  min-height: 500px; /* adjust based on content */
+  overflow: hidden;
+}
