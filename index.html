@@ -184,8 +184,7 @@ We operate within a partnership ecosystem, known as “our-community,” to prom
         </div>
         <h3>Data & Impact Analysis</h3>
         <p>
-          Data Impact & Analysis is a high-impact analytics solution that enables organizations to quantify the socioeconomic value generated across their operations and supply chains. By aligning data with ESG goals and Impact Sourcing strategies, ELDP helps drive measurable ROI through enhanced brand equity and improved stakeholder engagement.
-
+          Data Impact & Analysis is a high-impact analytics solution that enables organizations to quantify the socioeconomic value generated across their operations and supply chains. By aligning data with SDG and ESG goals to drive Impact Sourcing strategies, Employment Legacy Data Platform (ELDP) helps achieve measurable ROI through enhanced brand equity and improved stakeholder engagement.
         </p>
       </article>
     </div>
@@ -201,10 +200,7 @@ We operate within a partnership ecosystem, known as “our-community,” to prom
     <!-- Gradient Paragraph Block -->
     <div class="why-intro">
       <p>
-        South Africa is Africa’s most advanced economy, boasting world-class infrastructure, 
-        a strong financial sector (Johannesburg Stock Exchange), and key trade hubs like Durban Port. 
-        Its strategic location, business-friendly policies, and role in regional blocs,
-        make it the ideal springboard for global investors entering African markets.
+       South Africa is Africa’s most advanced economy, boasting world-class infrastructure, a strong financial sector and key trade hubs like Johannesburg, Cape Town and Durban. Its strategic location, business-friendly policies, and role in regional blocs, make it the ideal springboard for global investors entering African markets.
       </p>
     </div>
 
@@ -348,10 +344,20 @@ We operate within a partnership ecosystem, known as “our-community,” to prom
 <script>
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
+const body = document.body;
 
 function toggleMenu() {
   navLinks.classList.toggle('show');
-  hamburger.classList.toggle('active'); // toggles X animation
+  hamburger.classList.toggle('active'); // toggle X animation
+
+  if (navLinks.classList.contains('show')) {
+    body.classList.add('menu-open'); // prevent body scroll
+    navLinks.style.overflowY = 'auto'; // allow menu scrolling
+    navLinks.style.webkitOverflowScrolling = 'touch'; // smooth scrolling on iOS
+  } else {
+    body.classList.remove('menu-open');
+    navLinks.style.overflowY = ''; // reset
+  }
 }
 
 // Close menu when a nav link is clicked
@@ -359,6 +365,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('show');
     hamburger.classList.remove('active');
+    body.classList.remove('menu-open');
+    navLinks.style.overflowY = '';
   });
 });
 </script>
