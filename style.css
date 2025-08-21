@@ -4168,3 +4168,24 @@ section {
   min-height: 500px; /* adjust based on content */
   overflow: hidden;
 }
+/* Target iPad portrait */
+@media (max-width: 768px) and (min-width: 600px) {
+  .hero {
+    height: auto;          /* Let content define the height */
+    min-height: 100vh;     /* Ensure it fills the viewport */
+    overflow: visible;     /* Prevent cutting off content */
+    padding-top: 60px;     /* Adjust top padding if needed */
+    padding-bottom: 60px;  /* Adjust bottom padding if needed */
+  }
+}
+
+/* Target screens greater than 541px and less than 768px */
+@media (min-width: 542px) and (max-width: 767px) {
+  .hero {
+    height: auto;          /* Let content define the height */
+    min-height: 100vh;     /* Ensure it fills the viewport */
+    overflow: visible;     /* Prevent cutting off content */
+    padding-top: 60px;     /* Adjust top padding if needed */
+    padding-bottom: 60px;  /* Adjust bottom padding if needed */
+  }
+}
