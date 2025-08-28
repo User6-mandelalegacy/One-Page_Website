@@ -4189,3 +4189,15 @@ section {
     padding-bottom: 60px;  /* Adjust bottom padding if needed */
   }
 }
+
+.footer-bottom a {
+  color: #3C7AFC; /* blue from your palette */
+  text-decoration: underline;
+  margin-top: 5px;
+  display: inline-block;
+}
+.footer-bottom a:hover {
+  color: #ffffff; /* changes to white on hover */
+}
+
+

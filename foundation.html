@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mandela Legacy Foundation</title>
+  
+  <!-- Google Fonts - Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome for Professional Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Professional Color Palette */
+    :root {
+      --primary-navy: #0f172a;
+      --secondary-navy: #1e293b;
+      --accent-gold: #d4af37;
+      --light-gold: #f7e98e;
+      --neutral-gray: #64748b;
+      --light-gray: #f1f5f9;
+      --white: #ffffff;
+      --text-dark: #0f172a;
+      --text-light: #64748b;
+    }
+
+    /* Hero Section - Halved Height */
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+      color: var(--white);
+      padding: 60px 0 80px;
+      position: relative;
+      overflow: hidden;
+      min-height: 50vh;
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: var(--white);
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+
+    .hero-content {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    
+  .foundation-logo-img {
+  max-width: 140px;
+  width: 100%;
+  border-radius: 18px;
+  border: 3px solid var(--accent-gold);
+  box-shadow: 0 6px 24px rgba(212,175,55,0.13), 0 1.5px 8px rgba(15,23,42,0.10);
+  background: var(--white);
+  padding: 8px;
+  margin-bottom: 18px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 160px;
+}
+
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* About Section with Clickable Map */
+    .about-section {
+      padding: 100px 0;
+      background: var(--light-gray);
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 30px;
+      position: relative;
+      line-height: 1.2;
+    }
+
+    .about-content h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100px;
+      height: 4px;
+      background: var(--accent-gold);
+      border-radius: 2px;
+    }
+
+    .about-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 25px;
+    }
+
+    .about-visual {
+      background: var(--white);
+      height: 450px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .about-visual:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+    }
+
+    .map-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+      transition: all 0.3s ease;
+    }
+
+    .about-visual:hover .map-image {
+      transform: scale(1.05);
+    }
+
+    .map-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.1);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-navy);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .about-visual:hover .map-overlay {
+      opacity: 1;
+    }
+
+    /* Pillars Section */
+    .pillars-section {
+      padding: 100px 0;
+      background: var(--white);
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 25px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--accent-gold);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Pillars Grid - 2 per row */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pillar-card {
+      background: var(--white);
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      border: 1px solid #e2e8f0;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+      border-color: var(--accent-gold);
+    }
+
+    .pillar-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--primary-navy), var(--secondary-navy));
+      border-radius: 50%;
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 2.5rem;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
+    }
+
+    .pillar-card:hover .pillar-icon {
+      background: linear-gradient(135deg, var(--accent-gold), #b8860b);
+      transform: scale(1.1);
+    }
+
+    .pillar-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .pillar-description {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-light);
+    }
+
+    /* Advisors Section */
+    .advisors-section {
+      padding: 100px 0;
+      background: var(--primary-navy);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .advisors-section::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: var(--white);
+      border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    }
+
+    .advisors-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .advisors-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .advisors-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: var(--white);
+    }
+
+    .advisors-description {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* Advisors Grid - 3 per row */
+    .advisors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .advisor-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    .advisor-card:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-10px);
+      border-color: var(--accent-gold);
+    }
+
+    /* Live Interactive Circles for Advisors */
+    .advisor-avatar {
+      width: 100px;
+      height: 100px;
+      background: transparent;
+      border: 3px solid var(--white);
+      border-radius: 50%;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Animated border effect - Removed */
+
+    .advisor-card:hover .advisor-avatar::before {
+      /* animation: rotate 2s linear infinite; - Removed */
+    }
+
+    .advisor-card:hover .advisor-avatar {
+      /* border-color: transparent; - Removed */
+      transform: scale(1.1);
+      /* box-shadow: 0 0 30px rgba(212, 175, 55, 0.5); - Removed */
+    }
+
+    /* Pulsing effect - Removed */
+
+    .advisor-card:hover .advisor-avatar::after {
+      /* opacity: 1; - Removed */
+      /* animation: pulse 1.5s ease-in-out infinite; - Removed */
+    }
+
+    .advisor-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .advisor-role {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      opacity: 0.8;
+      color: var(--light-gold);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--text-dark);
+      color: var(--white);
+      padding: 80px 0 50px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .footer-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: var(--accent-gold);
+    }
+
+    .footer-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    .footer-link {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent-gold), #b8860b);
+      color: var(--text-dark);
+      padding: 18px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    }
+
+    .footer-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+    }
+
+    .copyright {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    /* Animations */
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.7; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    .slide-in-right {
+      animation: slideInRight 0.8s ease-out;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .pillars-grid {
+        max-width: 100%;
+      }
+      
+      .advisors-grid {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .advisors-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero-section,
+      .about-section,
+      .pillars-section,
+      .advisors-section {
+        padding: 60px 0;
+      }
+
+      .pillar-card,
+      .advisor-card {
+        padding: 40px 30px;
+      }
+    }
+
+    /* Professional Decorative Elements */
+    .geometric-pattern {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      opacity: 0.05;
+      z-index: 1;
+    }
+
+    .pattern-1 {
+      top: 20%;
+      right: -150px;
+      background: radial-gradient(circle, var(--accent-gold) 2px, transparent 2px);
+      background-size: 25px 25px;
+    }
+
+    .pattern-2 {
+      bottom: 20%;
+      left: -150px;
+      background: radial-gradient(circle, var(--white) 2px, transparent 2px);
+      background-size: 25px 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section - Halved, No Icon in Shape -->
+  <section class="hero-section">
+    <div class="geometric-pattern pattern-1"></div>
+    <div class="container">
+      <div class="hero-content fade-in-up">
+        <div class="logo-container">
+      
+      <img src="Images\MLF-Tree-Logo.jpg" alt="Mandela Legacy Foundation Logo" class="foundation-logo-img">
+       
+        </div>
+        <h1 class="hero-title">Mandela Legacy Foundation</h1>
+        <p class="hero-subtitle">Creating pathways of opportunity, equity, and empowerment across South Africa and beyond</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section with Clickable South Africa Map -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content slide-in-left">
+          <h2>About the Foundation</h2>
+          <p class="about-text">
+            The Mandela Legacy Foundation is dedicated to creating pathways of opportunity, equity, and empowerment across South Africa and beyond. Rooted in the values of our icons, the Foundation works to close socio-economic divides by championing education, inclusion, and sustainable development.
+          </p>
+          <p class="about-text">
+            Our initiatives address both immediate needs and long-term transformation, equipping communities with tools to thrive in the modern economy. Through strategic partnerships and impact-driven programs, we support job creation, skills development, and financial empowerment that shape the future of generations to come.
+          </p>
+        </div>
+          <img src="https://static.vecteezy.com/system/resources/previews/012/031/281/original/3d-map-illustration-of-south-africa-png.png" alt="Map of South Africa" class="map-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars Section -->
+  <section class="pillars-section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">Our Work – The 4 Pillars</h2>
+        <p class="section-subtitle">Four strategic focus areas that drive our mission forward and create lasting impact in communities</p>
+      </div>
+      
+      <div class="pillars-grid">
+        <div class="pillar-card fade-in-up">
+          <div class="pillar-icon">
+            <i class="fas fa-users-cog"></i>
+          </div>
+          <h3 class="pillar-title">Workforce Evolution</h3>
+          <p class="pillar-description">Our programs prepare the workforce for the future by promoting digital adoption, remote work readiness, and industry-relevant training that meet global standards.</p>
+        </div>
+        
+        <div class="pillar-card fade-in-up">
+          <div class="pillar-icon">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h3 class="pillar-title">Gender Divide</h3>
+          <p class="pillar-description">The Foundation actively tackles systemic inequalities, ensuring that both men and women benefit equally from opportunities in education, employment, and leadership.</p>
+        </div>
+        
+        <div class="pillar-card fade-in-up">
+          <div class="pillar-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="pillar-title">Smart Money</h3>
+          <p class="pillar-description">Beyond financial basics, we teach smart money habits that emphasize entrepreneurship, investment readiness, and wealth creation for long-term security.</p>
+        </div>
+        
+        <div class="pillar-card fade-in-up">
+          <div class="pillar-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3 class="pillar-title">Skills Acceleration</h3>
+          <p class="pillar-description">We accelerate learning in high-demand skills, including technology, business services, and creative industries, enabling youth to compete in the global economy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advisors Section with Live Circles and Roles -->
+  <section class="advisors-section">
+    <div class="geometric-pattern pattern-2"></div>
+    <div class="container">
+      <div class="advisors-content">
+        <div class="advisors-header fade-in-up">
+          <h2 class="advisors-title">Board of Advisors</h2>
+          
+  <p class="advisors-description">
+    The Mandela Legacy Foundation is guided by a diverse Board of Advisors who bring expertise across business, academia, policy, and social impact. They ensure that our work remains aligned with both local community needs and international best practices. 
+  </p>
+
+  <p class="advisors-description " style="margin-top: 1.5rem;">
+    The Board provides oversight, strategic guidance, and mentorship to ensure all initiatives deliver measurable, sustainable impact. Their support allows the Foundation to expand its reach, strengthen partnerships, and maintain accountability in driving social and economic transformation.
+  </p>
+        </div>
+
+        <div class="advisors-grid">
+          <div class="advisor-card fade-in-up">
+            <div class="advisor-avatar"></div>
+            <h3 class="advisor-name">Advisor 1</h3>
+            <p class="advisor-role">Expertise / Role</p>
+          </div>
+          
+          <div class="advisor-card fade-in-up">
+            <div class="advisor-avatar"></div>
+            <h3 class="advisor-name">Advisor 2</h3>
+            <p class="advisor-role">Expertise / Role</p>
+          </div>
+          
+          <div class="advisor-card fade-in-up">
+            <div class="advisor-avatar"></div>
+            <h3 class="advisor-name">Advisor 3</h3>
+            <p class="advisor-role">Expertise / Role</p>
+          </div>
+          
+          <div class="advisor-card fade-in-up">
+            <div class="advisor-avatar"></div>
+            <h3 class="advisor-name">Advisor 4</h3>
+            <p class="advisor-role">Expertise / Role</p>
+          </div>
+          
+          <div class="advisor-card fade-in-up">
+            <div class="advisor-avatar"></div>
+            <h3 class="advisor-name">Advisor 5</h3>
+            <p class="advisor-role">Expertise / Role</p>
+          </div>
+          
+          <div class="advisor-card fade-in-up">
+            <div class="advisor-avatar"></div>
+            <h3 class="advisor-name">Advisor 6</h3>
+            <p class="advisor-role">Expertise / Role</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content fade-in-up">
+        <h3 class="footer-title">Join Our Mission</h3>
+        <p class="footer-text">
+          Together, we can create lasting change and build a legacy that honors the vision of equality, justice, and opportunity for all.
+        </p>
+        <a href="index.html" class="footer-link">Back to Mandela Legacy Main Site</a>
+        <div class="copyright">
+          © 2025 Mandela Legacy Foundation. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
