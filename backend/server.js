@@ -53,6 +53,7 @@ try {
 
     res.json({ success: true, message: 'Registration successful! Please check your email.' });
   } catch (err) {
+     console.error('API /api/register error:', err); // Add this line
     res.status(500).json({ success: false, message: 'Server error.' });
   }
 });
