@@ -1,0 +1,1361 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mandela Legacy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .shake {
+    animation: shake 0.3s ease-in-out;
+  }
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+  }
+
+</style>
+<style>
+    /* Mobile fix only */
+    @media (max-width: 767px) {
+      section {
+        scroll-margin-top: 80px; /* adjust if needed */
+      }
+    }
+
+    /* Tablet fix if navbar is taller */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      section {
+        scroll-margin-top: 128px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+<!-- Navbar -->
+<nav class="fixed w-full bg-gradient-to-r from-indigo-950 via-blue-900 to-blue-700 shadow-lg z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+    <div class="flex justify-between items-center h-20 md:h-32">
+      
+      <!-- Logo -->
+      <a href="#home" class="flex items-center">
+        <img src="https://mandelalegacy.com/Images/Full_Logo.png" 
+             alt="Mandela Legacy Logo" 
+             class="h-12 md:h-24 w-auto">
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-10 text-base md:text-lg font-medium">
+        <a href="#home" class="text-white hover:text-blue-200 transition">Home</a>
+        <a href="#register" class="text-white hover:text-blue-200 transition">Register</a>
+        <a href="#tasks" class="text-white hover:text-blue-200 transition">Task Types</a>
+        <a href="#about" class="text-white hover:text-blue-200 transition">About Us</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" 
+                class="text-white p-2 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-white" 
+                aria-label="Toggle menu">
+          <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-r from-indigo-950 via-blue-900 to-blue-700 divide-y divide-blue-800">
+    <a href="#home" class="block px-6 py-4 text-white hover:bg-blue-800 hover:bg-opacity-60">Home</a>
+    <a href="#register" class="block px-6 py-4 text-white hover:bg-blue-800 hover:bg-opacity-60">Register</a>
+    <a href="#tasks" class="block px-6 py-4 text-white hover:bg-blue-800 hover:bg-opacity-60">Task Types</a>
+    <a href="#about" class="block px-6 py-4 text-white hover:bg-blue-800 hover:bg-opacity-60">About Us</a>
+  </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section id="home" class="relative pt-40 pb-36 bg-gradient-to-r from-indigo-950 via-blue-900 to-blue-700">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col items-center text-center">
+
+    <!-- Headline -->
+    <h1 class="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+      Shaping an Honest AI
+    </h1>
+
+    <!-- Subheading -->
+    <p class="text-lg md:text-xl text-blue-100 max-w-3xl mb-10 leading-relaxed">
+      Join the Mandela Legacy in building a just and equitable AI future.  
+      Your knowledge and voice are essential for creating honest, reliable artificial intelligence.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-5 justify-center">
+      <!-- Primary Button -->
+      <a href="#register"
+         class="flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl shadow-lg
+                bg-white text-blue-900 hover:bg-blue-100 transition-all gap-2">
+        <i data-lucide="user-plus" class="w-5 h-5"></i>
+        Register as Gig Worker
+      </a>
+
+      <!-- Secondary Button -->
+      <a href="#about"
+         class="flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl shadow-lg
+                border-2 border-white text-white hover:bg-white hover:text-blue-900 transition-all gap-2">
+        <i data-lucide="info" class="w-5 h-5"></i>
+        Learn More
+      </a>
+    </div>
+  </div>
+</section>
+
+   <!-- Register Section -->
+  <section id="register" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+          Register as a Gig Worker
+        </h2>
+        <p class="text-lg text-gray-600">
+          Join our community of data annotators and AI trainers. Help shape the future of AI.
+        </p>
+      </div>
+          
+      <div class="h-10"></div>
+      <form id="registrationForm" class="space-y-10" novalidate>
+        <!-- Personal Info -->
+        <div class="rounded-lg border shadow-sm p-6 space-y-4 bg-white">
+          <div class="flex items-center gap-2">
+            <i data-lucide="user" class="w-5 h-5 text-blue-600"></i>
+            <h3 class="text-lg font-semibold">Personal Information</h3>
+          </div>
+          <p class="text-sm text-gray-500">Please provide your basic contact information.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="firstName" class="block text-sm font-medium">First Name *</label>
+              <input type="text" id="firstName" class="mt-1 w-full border border-gray-300 p-2 rounded-md" required />
+            </div>
+            <div>
+              <label for="lastName" class="block text-sm font-medium">Last Name *</label>
+              <input type="text" id="lastName" class="mt-1 w-full border border-gray-300 p-2 rounded-md" required />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="email" class="block text-sm font-medium">Email Address *</label>
+              <input type="email" id="email" class="mt-1 w-full border border-gray-300 p-2 rounded-md" required />
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium">Phone Number</label>
+              <input type="tel" id="phone" class="mt-1 w-full border border-gray-300 p-2 rounded-md" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="country" class="block text-sm font-medium">Country *</label>
+              <input type="text" id="country" class="mt-1 w-full border border-gray-300 p-2 rounded-md" required />
+            </div>
+            <div>
+              <label for="city" class="block text-sm font-medium">City</label>
+              <input type="text" id="city" class="mt-1 w-full border border-gray-300 p-2 rounded-md" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Domain Expertise -->
+        <div class="rounded-lg border shadow-sm p-6 space-y-4 bg-white">
+          <div class="flex items-center gap-2">
+            <i data-lucide="briefcase" class="w-5 h-5 text-blue-600"></i>
+            <h3 class="text-lg font-semibold">Domain Expertise</h3>
+          </div>
+          <p class="text-sm text-gray-500">Select your areas of expertise. You can choose multiple domains and add custom ones.</p>
+          <div id="domainOptions" tabindex="-1" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"></div>
+          <div class="flex gap-2 mt-2">
+            <input id="customDomain" type="text" placeholder="Add custom domain expertise" class="border p-2 rounded flex-1" />
+            <button type="button" onclick="addCustomDomain()" class="px-4 py-2 bg-blue-600 text-white rounded">+</button>
+          </div>
+          <div>
+            <label class="block font-medium mb-2 mt-2">Selected Domains:</label>
+            <div id="selectedDomains" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+
+        <!-- Availability -->
+        <div class="rounded-lg border shadow-sm p-6 space-y-4 bg-white">
+          <div class="flex items-center gap-2">
+            <i data-lucide="clock" class="w-5 h-5 text-blue-600"></i>
+            <h3 class="text-lg font-semibold">Availability</h3>
+          </div>
+          <p class="text-sm text-gray-500">Select your available time slots for each day. You can choose up to 6 time slots per day.</p>
+          <div id="availability" tabindex="-1"></div>
+        </div>
+
+        <!-- Languages -->
+        <div class="rounded-lg border shadow-sm p-6 space-y-4 bg-white">
+          <div class="flex items-center gap-2">
+            <i data-lucide="languages" class="w-5 h-5 text-blue-600"></i>
+            <h3 class="text-lg font-semibold">Language Proficiencies</h3>
+          </div>
+          <p class="text-sm text-gray-500">Select the African languages you are proficient in. Choose all that apply.</p>
+          <div id="languageOptions" tabindex="-1" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"></div>
+          <div>
+            <label class="block font-medium mb-2 mt-2">Selected Languages:</label>
+            <div id="selectedLanguages" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+
+        <!-- Educational Qualifications -->
+        <div class="rounded-lg border shadow-sm p-6 space-y-4 bg-white">
+          <div class="flex items-center gap-2">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-blue-600"></i>
+            <h3 class="text-lg font-semibold">Educational Qualifications</h3>
+          </div>
+          <p class="text-sm text-gray-500">Please provide information about your highest educational qualification.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="highestQualification" class="block text-sm font-medium">Highest Qualification *</label>
+              <select id="highestQualification" class="mt-1 w-full border border-gray-300 p-2 rounded-md" required>
+                <option value="">Select your highest qualification</option>
+                <option>High School Diploma</option>
+                <option>Certificate</option>
+                <option>Diploma</option>
+                <option>Associate Degree</option>
+                <option>Bachelor's Degree</option>
+                <option>Master's Degree</option>
+                <option>Doctoral Degree (PhD)</option>
+                <option>Professional Degree</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="fieldOfStudy" class="block text-sm font-medium">Field of Study</label>
+              <input type="text" id="fieldOfStudy" placeholder="e.g., Computer Science, Medicine, Law" class="mt-1 w-full border border-gray-300 p-2 rounded-md" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="institution" class="block text-sm font-medium">Institution</label>
+              <input type="text" id="institution" placeholder="University/College name" class="mt-1 w-full border border-gray-300 p-2 rounded-md" />
+            </div>
+            <div>
+              <label for="graduationYear" class="block text-sm font-medium">Graduation Year</label>
+              <input type="number" id="graduationYear" min="1950" max="2030" placeholder="YYYY" class="mt-1 w-full border border-gray-300 p-2 rounded-md" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="rounded-lg border shadow-sm p-6 space-y-4 bg-white">
+          <div class="flex items-center gap-2">
+            <i data-lucide="file-text" class="w-5 h-5 text-blue-600"></i>
+            <h3 class="text-lg font-semibold">Additional Information</h3>
+          </div>
+          <p class="text-sm text-gray-500">Tell us more about your experience and motivation.</p>
+          <div>
+            <label for="experience" class="block text-sm font-medium">Relevant Experience</label>
+            <textarea id="experience" rows="4" class="w-full border border-gray-300 p-2 rounded-md" placeholder="Describe any relevant experience in data annotation, AI, or related fields..."></textarea>
+          </div>
+          <div>
+            <label for="motivation" class="block text-sm font-medium">Why do you want to join?</label>
+            <textarea id="motivation" rows="4" class="w-full border border-gray-300 p-2 rounded-md" placeholder="Tell us about your motivation to contribute to AI development..."></textarea>
+          </div>
+        </div>
+        
+
+  <!-- Disclaimer -->
+<div class="bg-blue-50 border border-blue-200 text-blue-900 text-sm rounded-lg px-4 py-3 mb-6 flex items-start gap-2">
+  <svg class="w-5 h-5 mt-1 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20h.01M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"></path>
+  </svg>
+  <div>
+    <strong>Disclaimer:</strong> By submitting this form, you consent to the collection and processing of your information for the purpose of joining the Mandela Legacy Gig Worker community. Your data will be handled in accordance with our <a href="#" id="privacy-link" class="underline text-blue-700 hover:text-blue-900">Privacy Policy</a> and will not be shared with third parties without your consent.
+  </div>
+</div>
+        <!-- Submit -->
+        <div class="flex justify-center">
+         <button type="submit" id="submitBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded text-lg flex items-center gap-2 justify-center transition disabled:opacity-70 disabled:cursor-not-allowed">
+  <span id="submitBtnText">Submit Registration</span>
+  <svg id="submitSpinner" class="hidden animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+  </svg>
+</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Task Types Section -->
+  <section id="tasks" class="py-20 px-4 sm:px-6 lg:px-8 bg-blue-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Task Types</h2>
+      <p class="text-lg text-gray-600">Explore the different types of AI training tasks you can contribute to.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Data Annotation & Labelling -->
+      <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+        <div class="text-center p-6">
+          <img src="https://digitaltribunes.com/wp-content/uploads/2024/01/1_vP8tTPsuL8Eb_ThPzvF-Mg-1024x576.png"
+               alt="Data Annotation" class="w-full h-48 object-cover rounded-lg shadow mb-4">
+          <h3 class="text-lg font-semibold text-gray-900 mb-1">Data Annotation & Labelling</h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Essential foundation work for AI training involving precise data categorization and identification.
+          </p>
+          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold mb-3">Task Type 1</span>
+          <h4 class="font-medium text-gray-900 mb-2">Key Activities:</h4>
+          <ul class="text-sm text-gray-600 space-y-1 text-left">
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Text classification: Tagging sentiment, intent, or topic</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Named entity recognition (NER): Identifying people, places, organizations in text</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Image/video labeling: Bounding boxes, segmentation, object identification</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Audio transcription: Converting speech to text, often with speaker or emotion tags</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Multimodal alignment: Matching text descriptions to images or videos</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Prompt Evaluation & Response Rating -->
+      <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+        <div class="text-center p-6">
+          <img src="https://d3lkc3n5th01x7.cloudfront.net/wp-content/uploads/2024/05/28011638/AI-Incident-Response.png"
+               alt="Prompt Evaluation" class="w-full h-48 object-cover rounded-lg shadow mb-4">
+          <h3 class="text-lg font-semibold text-gray-900 mb-1">Prompt Evaluation & Response Rating</h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Critical quality assurance work ensuring AI responses meet high standards of accuracy and safety.
+          </p>
+          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold mb-3">Task Type 2</span>
+          <h4 class="font-medium text-gray-900 mb-2">Key Activities:</h4>
+          <ul class="text-sm text-gray-600 space-y-1 text-left">
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Ranking responses: Choosing the best among multiple generated replies</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Scoring relevance, coherence, and factuality</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Flagging harmful, biased, or misleading content</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Comparing human-written vs. AI-generated text</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Synthetic Data Generation -->
+      <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+        <div class="text-center p-6">
+          <img src="https://www.unite.ai/wp-content/uploads/2024/01/Synthetic-Data-Generation-1000x600.png"
+               alt="Synthetic Data Generation" class="w-full h-48 object-cover rounded-lg shadow mb-4">
+          <h3 class="text-lg font-semibold text-gray-900 mb-1">Synthetic Data Generation</h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Creative content creation to expand AI training datasets with diverse, domain-specific examples.
+          </p>
+          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold mb-3">Task Type 3</span>
+          <h4 class="font-medium text-gray-900 mb-2">Key Activities:</h4>
+          <ul class="text-sm text-gray-600 space-y-1 text-left">
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Writing prompts and completions for specific domains (e.g., medical, legal)</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Generating diverse examples to improve model generalization</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Creating adversarial examples to test model robustness</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Search Relevance & Query Evaluation -->
+      <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+        <div class="text-center p-6">
+          <img src="https://img.freepik.com/premium-vector/network-settings-technology_88272-8479.jpg"
+               alt="Search Relevance" class="w-full h-48 object-cover rounded-lg shadow mb-4">
+          <h3 class="text-lg font-semibold text-gray-900 mb-1">Search Relevance & Query Evaluation</h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Improving search and information retrieval systems through careful evaluation and optimization.
+          </p>
+          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold mb-3">Task Type 4</span>
+          <h4 class="font-medium text-gray-900 mb-2">Key Activities:</h4>
+          <ul class="text-sm text-gray-600 space-y-1 text-left">
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Judging relevance of search results to user queries</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Annotating query intent and user satisfaction</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Evaluating autocomplete suggestions</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Conversational AI Testing -->
+      <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+        <div class="text-center p-6">
+          <img src="https://makemychance.com/wp-content/uploads/2023/02/Conversational-AI.jpg"
+               alt="Conversational AI" class="w-full h-48 object-cover rounded-lg shadow mb-4">
+          <h3 class="text-lg font-semibold text-gray-900 mb-1">Conversational AI Testing</h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Enhancing chatbot and conversational AI systems through comprehensive testing and feedback.
+          </p>
+          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold mb-3">Task Type 5</span>
+          <h4 class="font-medium text-gray-900 mb-2">Key Activities:</h4>
+          <ul class="text-sm text-gray-600 space-y-1 text-left">
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Roleplaying user scenarios to test chatbot performance</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Logging bugs or unnatural responses</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Providing feedback on tone, empathy, and engagement</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bias & Fairness Audits -->
+      <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+        <div class="text-center p-6">
+          <img src="https://img.freepik.com/premium-vector/fact-bias-false-understanding-choosing-reality-from-subjective-belief_1162612-1470.jpg?w=826"
+               alt="Bias & Fairness" class="w-full h-48 object-cover rounded-lg shadow mb-4">
+          <h3 class="text-lg font-semibold text-gray-900 mb-1">Bias & Fairness Audits</h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Ensuring AI systems are fair and inclusive by identifying and addressing potential biases.
+          </p>
+          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold mb-3">Task Type 6</span>
+          <h4 class="font-medium text-gray-900 mb-2">Key Activities:</h4>
+          <ul class="text-sm text-gray-600 space-y-1 text-left">
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Flagging biased outputs across gender, race, religion, etc.</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Testing prompts for differential treatment</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Suggesting inclusive alternatives</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Language Expansion & Localization -->
+      <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+        <div class="text-center p-6">
+          <img src="https://media.licdn.com/dms/image/D4D12AQHwpZ3t975MFA/article-cover_image-shrink_720_1280/0/1678972505827?e=2147483647&v=beta&t=UiJLFL4tYuxndd7muUeRuKbzZkjjTYS9jZlt2N8JDbY"
+               alt="Language Localization" class="w-full h-48 object-cover rounded-lg shadow mb-4">
+          <h3 class="text-lg font-semibold text-gray-900 mb-1">Language Expansion & Localization</h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Making AI accessible globally by expanding language support and cultural understanding.
+          </p>
+          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold mb-3">Task Type 7</span>
+          <h4 class="font-medium text-gray-900 mb-2">Key Activities:</h4>
+          <ul class="text-sm text-gray-600 space-y-1 text-left">
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Translating prompts and responses</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Annotating dialects, idioms, and cultural nuances</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2 mt-1">•</span> Validating model performance in low-resource languages</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <section id="about" class="py-16 px-6 bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      About Us
+    </h2>
+    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      Learn about the Mandela Legacy mission and our commitment to honest AI.
+    </p>
+  </div>
+
+  <!-- Card -->
+  <div class="max-w-4xl mx-auto">
+    <div class="bg-white rounded-2xl shadow-lg p-8">
+      
+      <!-- Title with Icon -->
+      <div class="flex items-center mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 4H7a2 2 0 01-2-2V6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v12a2 2 0 01-2 2z"/>
+        </svg>
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+          Shaping an Honest AI: A Collective Responsibility
+        </h3>
+      </div>
+
+      <!-- Content -->
+      <div class="space-y-6 text-gray-700 leading-relaxed">
+        <p>
+          At the Mandela Legacy, we believe in the power of collective action to build a just and equitable world. 
+          This principle, which guided Nelson Mandela's life, must now be applied to the defining technology of our 
+          time: Artificial Intelligence. We are at a pivotal moment where we must ensure that AI develops as an 
+          honest reflection of our diverse world. This is a calling for each of us to contribute our unique knowledge 
+          and experiences.
+        </p>
+
+        <p>
+          Artificial Intelligence learns from the information we create. For AI to be a truthful and reliable source, 
+          the data it learns from must be accurate and free from the biases that have long plagued our societies. 
+          When AI is trained on skewed data, it can amplify existing inequalities.
+        </p>
+
+        <p>
+          This is where you come in. Your knowledge and your voice are essential for a more honest and reliable AI. 
+          By actively participating in the training and refinement of AI systems, you play a crucial role in correcting 
+          biases and ensuring AI understands the rich complexity of our global community. Your involvement is a vital 
+          act of shaping a technology that will touch every aspect of our lives.
+        </p>
+
+        <p>
+          The Mandela Legacy is committed to a future where technology serves humanity. In line with our mission to 
+          empower communities and promote social justice, we champion initiatives that promote fairness and transparency 
+          in AI. We envision a world where AI is a tool for progress, reflecting the wisdom of all people.
+        </p>
+
+        <p>
+          Your role in this is indispensable. We encourage you to engage, to share your expertise, and to demand 
+          accountability from those who develop and deploy AI. You can become a knowledgeable contributor, advocate 
+          for transparency, and champion diversity in the teams that build AI.
+        </p>
+
+        <p class="font-semibold text-gray-900">
+          The journey to an unbiased AI requires our collective vigilance and shared belief in a future where technology 
+          reflects the best of our humanity. Let us unite in this effort, inspired by a legacy that taught us real change 
+          is possible when we work together. Let us all play our part in ensuring that AI is a force for good, a true 
+          and honest reflection of the world we all share.
+        </p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="mt-8 pt-6 border-t border-gray-200">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#register" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-lg shadow">
+            Join Our Mission
+          </a>
+          <a href="#tasks" class="border border-blue-600 text-blue-600 hover:bg-blue-50 font-medium px-6 py-2 rounded-lg">
+            Explore Task Types
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+<footer class="bg-gradient-to-r from-indigo-950 via-blue-900 to-blue-700 text-white mt-16">
+  <div class="max-w-7xl mx-auto px-6 py-12 text-center">
+    <h2 class="text-2xl font-bold mb-3">Mandela Legacy</h2>
+    <p class="text-blue-100 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-4">
+      Building a just and equitable AI future through collective action.
+    </p>
+    <p class="text-xs text-blue-200">&copy; 2025 Mandela Legacy. All rights reserved.</p>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+   <!-- JS Logic -->
+  <script>
+  lucide.createIcons();
+
+  // ----- Form Data -----
+  const formData = { domainExpertise: [], availability: {}, languages: [] };
+  const domainOptions = [
+    "Medical/Healthcare","Finance/Banking","Legal/Law","Software Development",
+    "History","Science","Biology","Engineering","Education","Marketing","Agriculture",
+    "Environmental Science","Psychology","Economics","Literature","Art & Design",
+    "Music","Sports","Journalism","Other"
+  ];
+  const timeSlots = ["06:00-08:00","08:00-10:00","10:00-12:00","12:00-14:00","14:00-16:00","16:00-18:00","18:00-20:00","20:00-22:00"];
+  const daysOfWeek = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+  const africanLanguages = [
+    'Afrikaans','Amharic','Arabic','Bambara','Berber/Amazigh','Chichewa',
+    'English','French','Fulani','Hausa','Igbo','Kikuyu','Kinyarwanda',
+    'Lingala','Luganda','Malagasy','Ndebele','Oromo','Portuguese','Sesotho',
+    'Setswana','Shona','Somali','Swahili','Tigrinya','Tonga','Tsonga',
+    'Venda','Wolof','Xhosa','Yoruba','Zulu'
+  ];
+
+  const countryCities = {
+  "South Africa": ["Johannesburg","Cape Town","Durban","Pretoria","Port Elizabeth","Bloemfontein","East London","Polokwane","Nelspruit","Kimberley","Welkom","Rustenburg","Vereeniging"],
+  "Nigeria": ["Lagos","Abuja","Kano","Ibadan","Port Harcourt","Benin City","Jos","Enugu","Maiduguri","Zaria","Ilorin","Abeokuta","Sokoto","Ondo"],
+  "Kenya": ["Nairobi","Mombasa","Kisumu","Nakuru","Eldoret","Thika","Kitale","Machakos","Malindi","Meru","Garissa","Naivasha"],
+  "Ghana": ["Accra","Kumasi","Tamale","Takoradi","Cape Coast","Tema","Sekondi","Koforidua","Ho","Sunyani","Bolgatanga"],
+  "Uganda": ["Kampala","Entebbe","Jinja","Gulu","Mbale","Mbarara","Lira","Fort Portal","Masaka","Soroti"],
+  "Tanzania": ["Dodoma","Dar es Salaam","Arusha","Mwanza","Mbeya","Zanzibar","Tanga","Morogoro","Iringa","Moshi"],
+  "Egypt": ["Cairo","Alexandria","Giza","Shubra El Kheima","Port Said","Suez","Luxor","Aswan","Mansoura","Tanta"],
+  "Ethiopia": ["Addis Ababa","Dire Dawa","Mekelle","Gondar","Bahir Dar","Adama","Hawassa","Jimma","Jijiga"],
+  "Botswana": ["Gaborone","Francistown","Maun","Serowe","Molepolole","Selibe-Phikwe","Lobatse","Kanye"],
+  "Namibia": ["Windhoek","Swakopmund","Walvis Bay","Rundu","Oshakati","Rehoboth","Opuwo"],
+  "Zimbabwe": ["Harare","Bulawayo","Mutare","Gweru","Kwekwe","Masvingo","Chitungwiza","Bindura"],
+  "Morocco": ["Rabat","Casablanca","Marrakech","Fes","Tangier","Agadir","Meknes","Oujda"],
+  "Senegal": ["Dakar","Saint-Louis","Touba","Kaolack","Ziguinchor","Thiès","Mbour","Diourbel"],
+  "Cameroon": ["Yaoundé","Douala","Garoua","Bamenda","Bafoussam","Ngaoundéré","Kribi","Ebolowa"],
+  "Zambia": ["Lusaka","Ndola","Kitwe","Livingstone","Chingola","Kabwe","Chipata","Mufulira"],
+  "Malawi": ["Lilongwe","Blantyre","Mzuzu","Zomba","Kasungu","Mangochi","Karonga"],
+  "Rwanda": ["Kigali","Butare","Gisenyi","Ruhengeri","Gitarama","Kibuye","Cyangugu"],
+  "Algeria": ["Algiers","Oran","Constantine","Annaba","Blida","Batna","Setif","Tlemcen"],
+  "Tunisia": ["Tunis","Sfax","Sousse","Kairouan","Bizerte","Gabes","Monastir","Sidi Bouzid"],
+  "Mozambique": ["Maputo","Beira","Nampula","Matola","Chimoio","Quelimane","Tete","Xai-Xai"],
+  "Angola": ["Luanda","N'dalatando","Huambo","Lobito","Benguela","Lubango","Malanje","Uíge"]
+};
+
+
+  // ----- Validation Functions -----
+  function showError(input, message) {
+    let errorSpan = input.nextElementSibling;
+    if (!errorSpan || !errorSpan.classList.contains("error-message")) {
+      errorSpan = document.createElement("span");
+      errorSpan.className = "error-message text-red-500 text-sm block mt-1";
+      input.insertAdjacentElement("afterend", errorSpan);
+    }
+    errorSpan.textContent = message;
+    input.classList.add("border-red-500", "shake");
+    setTimeout(() => input.classList.remove("shake"), 300);
+  }
+
+  function clearError(input) {
+    const errorSpan = input.nextElementSibling;
+    if (errorSpan && errorSpan.classList.contains("error-message")) {
+      errorSpan.remove();
+    }
+    input.classList.remove("border-red-500");
+  }
+
+// Show error for sections (like Domain Expertise, Availability, Languages)
+function showErrorForSection(container, message) {
+  // Check if an error span already exists
+  let errorSpan = container.querySelector(".error-message");
+  if (!errorSpan) {
+    errorSpan = document.createElement("span");
+    errorSpan.className = "error-message text-red-500 text-sm block mt-2";
+    container.appendChild(errorSpan);
+  }
+  errorSpan.textContent = message;
+
+  // Shake effect for visibility
+  container.classList.add("shake");
+  setTimeout(() => container.classList.remove("shake"), 300);
+}
+
+function clearErrorForSection(container) {
+  const errorSpan = container.querySelector(".error-message");
+  if (errorSpan) errorSpan.remove();
+}
+
+ function validateName(input, fieldName) {
+  const nameRegex = /^[A-Za-zÀ-ÿ\s'-]{2,}$/; // Letters + spaces + accents + hyphen/apostrophe
+  if (!input.value.trim()) {
+    showError(input, `${fieldName} is required.`);
+    return false;
+  }
+  if (!nameRegex.test(input.value.trim())) {
+    showError(input, `${fieldName} must contain only letters and be at least 2 characters.`);
+    return false;
+  }
+  clearError(input);
+  return true;
+}
+
+  function validateNotEmpty(input, fieldName) {
+  if (!input.value.trim()) {
+    showError(input, `${fieldName} is required.`);
+    return false;
+  }
+  clearError(input);
+  return true;
+}
+
+  function validateEmail(input) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(input.value.trim())) {
+      showError(input, "Please enter a valid email address.");
+      return false;
+    }
+    clearError(input);
+    return true;
+  }
+
+  function validateCountry(input) {
+  const validCountries = [
+    "South Africa","Nigeria","Kenya","Ghana","Uganda","Tanzania","Egypt",
+    "Ethiopia","Botswana","Namibia","Zimbabwe","Morocco","Senegal","Cameroon",
+    "Zambia","Malawi","Rwanda","Algeria","Tunisia","Mozambique","Angola"
+  ];
+
+  const rawValue = input.value.trim();
+  if (!rawValue) {
+    showError(input, "Country is required.");
+    return false;
+  }
+
+  // Normalize input: ignore spaces and lowercase
+  const normalizedInput = rawValue.toLowerCase().replace(/\s+/g, "");
+
+  // Find a matching country
+  const matchedCountry = validCountries.find(
+    c => c.toLowerCase().replace(/\s+/g, "") === normalizedInput
+  );
+
+  if (!matchedCountry) {
+    showError(input, "Please enter a valid country name.");
+    return false;
+  }
+
+  // ✅ Auto-format input nicely
+  input.value = matchedCountry;
+  clearError(input);
+  return true;
+}
+
+ function validateCity(cityInput, countryInput) {
+  const rawCity = cityInput.value.trim();
+  const country = countryInput.value.trim();
+
+  if (!rawCity) return true; // City is optional
+
+  if (!country) {
+    showError(countryInput, "Select a country first before entering a city.");
+    return false;
+  }
+
+  if (countryCities[country]) {
+    const validCities = countryCities[country];
+
+    // Normalize input: ignore spaces and make lowercase
+    const normalizedInput = rawCity.toLowerCase().replace(/\s+/g, "");
+
+    // Look for a matching city regardless of spacing/case
+    const matchedCity = validCities.find(
+      c => c.toLowerCase().replace(/\s+/g, "") === normalizedInput
+    );
+
+    if (!matchedCity) {
+      showError(cityInput, `Please enter a valid city for ${country}.`);
+      return false;
+    }
+
+    // Auto-format input to proper spacing/capitalization
+    cityInput.value = matchedCity;
+  }
+
+  clearError(cityInput);
+  return true;
+}
+
+ function validatePhone(input) {
+  const rawValue = input.value.trim();
+  const value = rawValue.replace(/\s+/g, "");
+
+  if (!value) return true; // Optional phone
+
+  // Must start with '0' or '+', followed by digits
+  if (!/^0\d+$/.test(value) && !/^\+\d+$/.test(value)) {
+    showError(
+      input,
+      "Phone must start with 0 (local) or + (international) and contain only numbers (e.g., 0713452563 or +27713452563)."
+    );
+    return false;
+  }
+
+  // Remove leading 0 or +
+  const digits = value.startsWith("+") ? value.slice(1) : value.startsWith("0") ? value.slice(1) : value;
+
+  // Now count the numbers (South Africa: 9 after 0; typical international: 10-14 after +)
+  // Adjust as needed for your country!
+  if (value.startsWith("0")) {
+    if (digits.length !== 9) {
+      showError(
+        input,
+        "Local phone numbers must be exactly 10 digits (including the starting 0)."
+      );
+      return false;
+    }
+  } else if (value.startsWith("+")) {
+    if (digits.length < 10 || digits.length > 14) {
+      showError(
+        input,
+        "International numbers must be at least 11 and up to 15 digits (including +)."
+      );
+      return false;
+    }
+  }
+
+  input.value = value;
+  clearError(input);
+  return true;
+}
+
+  // ----- Validate Availability Per Day with Messages -----
+function validateAvailabilityPerDay(availability) {
+  let allDaysValid = true;
+
+  daysOfWeek.forEach(day => {
+    const dayWrapper = Array.from(document.getElementById("availability").children)
+      .find(el => el.querySelector("h4").textContent === day);
+
+    // Clear previous error for the day
+    const prevError = dayWrapper.querySelector(".error-message");
+    if (prevError) prevError.remove();
+    dayWrapper.style.backgroundColor = ""; // reset highlight
+
+    if (!availability[day] || availability[day].length === 0) {
+      allDaysValid = false;
+
+      // Show error for the specific day
+      const errorSpan = document.createElement("span");
+      errorSpan.className = "error-message text-red-500 text-sm block mt-1";
+      errorSpan.textContent = `Please select at least one time slot for ${day}.`;
+      dayWrapper.appendChild(errorSpan);
+
+      // Highlight the day
+      dayWrapper.style.backgroundColor = "#f8d7da"; // light red
+      setTimeout(() => {
+        dayWrapper.style.backgroundColor = "";
+      }, 1200);
+    }
+  });
+
+  return allDaysValid;
+}
+
+  // ----- Dynamic Domain Options -----
+  const domainContainer = document.getElementById("domainOptions");
+  domainOptions.forEach(domain => {
+    const div = document.createElement("div");
+    div.innerHTML = `<label class="flex items-center gap-2 text-sm"><input type="checkbox" onchange="toggleDomain('${domain}')"/> ${domain}</label>`;
+    domainContainer.appendChild(div);
+  });
+
+  function toggleDomain(domain) {
+  const idx = formData.domainExpertise.indexOf(domain);
+  if (idx > -1) formData.domainExpertise.splice(idx, 1);
+  else formData.domainExpertise.push(domain);
+  renderSelectedDomains();
+  handleDomainChange(); // ✅ clear error when a domain is selected
+}
+
+function handleDomainChange() {
+  const domainSection = document.getElementById("domainOptions");
+  if (formData.domainExpertise.length > 0) {
+    clearErrorForSection(domainSection);
+  }
+}
+
+  function addCustomDomain() {
+    const input = document.getElementById("customDomain");
+    const val = input.value.trim();
+    if (val && !formData.domainExpertise.includes(val)) {
+      formData.domainExpertise.push(val);
+      renderSelectedDomains();
+    }
+    input.value = "";
+  }
+
+  function renderSelectedDomains() {
+    const container = document.getElementById("selectedDomains");
+    container.innerHTML = "";
+    formData.domainExpertise.forEach(domain => {
+      const badge = document.createElement("span");
+      badge.className = "px-2 py-1 bg-blue-100 text-blue-700 rounded text-sm flex items-center gap-1";
+      badge.innerHTML = `${domain} <button type="button" onclick="removeDomain('${domain}')" class="text-red-500">x</button>`;
+      container.appendChild(badge);
+    });
+  }
+
+  function removeDomain(domain) {
+    formData.domainExpertise = formData.domainExpertise.filter(d => d !== domain);
+    renderSelectedDomains();
+    const checkboxes = document.querySelectorAll('#domainOptions input[type="checkbox"]');
+    checkboxes.forEach(cb => {
+      if (cb.parentElement.textContent.trim() === domain) cb.checked = false;
+    });
+  }
+
+  // ----- Dynamic Availability -----
+const availContainer = document.getElementById("availability");
+daysOfWeek.forEach(day => {
+  formData.availability[day] = [];
+  const wrapper = document.createElement("div");
+  wrapper.className = "mb-4";
+  wrapper.innerHTML = `<h4 class="font-medium mb-2">${day}</h4>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+      ${timeSlots.map(slot => `<label class="flex items-center gap-2 text-sm"><input type="checkbox" onchange="toggleAvailability('${day}','${slot}'); handleAvailabilityChange('${day}');"/> ${slot}</label>`).join("")}
+    </div>`;
+  availContainer.appendChild(wrapper);
+});
+
+function toggleAvailability(day, slot) {
+  const idx = formData.availability[day].indexOf(slot);
+
+  // Find the day wrapper to show the message inline
+  const dayWrapper = Array.from(document.getElementById("availability").children)
+    .find(el => el.querySelector("h4").textContent === day);
+
+  // Remove any previous inline max error message (we'll re-add if needed)
+  let maxError = dayWrapper.querySelector(".max-slot-error");
+  if (maxError) maxError.remove();
+
+  if (idx > -1) {
+    // UNCHECK: remove slot
+    formData.availability[day].splice(idx, 1);
+  } else if (formData.availability[day].length < 6) {
+    // CHECK: add slot (if <6 already checked)
+    formData.availability[day].push(slot);
+  } else {
+    // Trying to check a 7th slot
+    // Show inline error message, not alert!
+    maxError = document.createElement("span");
+    maxError.className = "max-slot-error text-red-500 text-sm block mt-1";
+    maxError.textContent = "You can select a maximum of 6 time slots per day.";
+    dayWrapper.appendChild(maxError);
+    // Uncheck the box immediately
+    const allBoxes = Array.from(dayWrapper.querySelectorAll("input[type='checkbox']"));
+    allBoxes.find(cb => cb.parentElement.textContent.trim() === slot).checked = false;
+  }
+  renderAvailabilityCheckboxes(day);
+
+  // Always remove the error message if now <= 6 slots
+  // (this covers both checking and unchecking any box)
+  maxError = dayWrapper.querySelector(".max-slot-error");
+  if (formData.availability[day].length <= 6 && maxError) {
+    maxError.remove();
+  }
+}
+
+function renderAvailabilityCheckboxes(day) {
+  const dayWrapper = Array.from(document.getElementById("availability").children).find(el => el.querySelector("h4").textContent === day);
+  if (dayWrapper) {
+    dayWrapper.querySelectorAll("input[type='checkbox']").forEach(cb => {
+      const slot = cb.parentElement.textContent.trim();
+      cb.checked = formData.availability[day].includes(slot);
+    });
+  }
+}
+
+// NEW: Clear availability error as soon as a slot is checked for a day
+function handleAvailabilityChange(day) {
+  const availSection = document.getElementById("availability");
+  const dayWrapper = Array.from(availSection.children).find(el => el.querySelector("h4").textContent === day);
+  if (formData.availability[day].length > 0 && dayWrapper) {
+    // Remove error just for this day
+    const errorSpan = dayWrapper.querySelector(".error-message");
+    if (errorSpan) errorSpan.remove();
+    dayWrapper.style.backgroundColor = ""; // Remove highlight if any
+  }
+}
+
+// ----- Languages -----
+const langContainer = document.getElementById("languageOptions");
+africanLanguages.forEach(lang => {
+  const div = document.createElement("div");
+  div.innerHTML = `<label class="flex items-center gap-2 text-sm"><input type="checkbox" onchange="toggleLanguage('${lang}'); handleLanguageChange();" /> ${lang}</label>`;
+  langContainer.appendChild(div);
+});
+
+function toggleLanguage(lang) {
+  const idx = formData.languages.indexOf(lang);
+  if (idx > -1) formData.languages.splice(idx, 1);
+  else formData.languages.push(lang);
+  renderSelectedLanguages();
+}
+
+function renderSelectedLanguages() {
+  const container = document.getElementById("selectedLanguages");
+  container.innerHTML = "";
+  formData.languages.forEach(lang => {
+    const badge = document.createElement("span");
+    badge.className = "px-2 py-1 bg-blue-100 text-blue-700 rounded text-sm flex items-center gap-1";
+    badge.innerHTML = `${lang} <button type="button" onclick="removeLanguage('${lang}')" class="text-red-500">x</button>`;
+    container.appendChild(badge);
+  });
+}
+
+function removeLanguage(lang) {
+  formData.languages = formData.languages.filter(l => l !== lang);
+  const checkboxes = document.querySelectorAll('#languageOptions input[type="checkbox"]');
+  checkboxes.forEach(cb => {
+    if (cb.parentElement.textContent.trim() === lang) cb.checked = false;
+  });
+  renderSelectedLanguages();
+  handleLanguageChange();
+}
+
+// NEW: Clear language error as soon as a language is checked
+function handleLanguageChange() {
+  const langSection = document.getElementById("languageOptions");
+  if (formData.languages.length > 0) {
+    clearErrorForSection(langSection);
+  }
+}
+
+function validateQualification() {
+  // Only show error if the field was touched or the form was submitted
+  if (qualificationSelect.value && qualificationSelect.value !== "") {
+    clearError(qualificationSelect);
+    return true;
+  }
+  if (qualificationTouched || formSubmitted) {
+    showError(qualificationSelect, "Highest Qualification is required.");
+    return false;
+  }
+  clearError(qualificationSelect);
+  return true;
+}
+
+  // ----- Inputs -----
+  const firstNameInput = document.getElementById("firstName");
+  const lastNameInput = document.getElementById("lastName");
+  const emailInput = document.getElementById("email");
+  const countryInput = document.getElementById("country");
+  const cityInput = document.getElementById("city");
+  const phoneInput = document.getElementById("phone");
+  const qualificationSelect = document.getElementById("highestQualification");
+
+// Flags to control error display
+let qualificationTouched = false;
+let formSubmitted = false;
+
+// Autofill fix: if qualification is filled, clear error and mark as touched
+function checkQualificationAutofill() {
+  if (qualificationSelect.value && qualificationSelect.value !== "") {
+    clearError(qualificationSelect);
+    qualificationTouched = true; // prevents error from showing spuriously
+  }
+}
+
+window.addEventListener("DOMContentLoaded", checkQualificationAutofill);
+// In case autofill happens slightly after DOMContentLoaded:
+setTimeout(checkQualificationAutofill, 500);
+setTimeout(checkQualificationAutofill, 1200);
+setTimeout(checkQualificationAutofill, 2000);
+
+// Also check on focus (sometimes autofill triggers on focus)
+qualificationSelect.addEventListener("focus", checkQualificationAutofill);
+
+// Mark as touched on focus/change/blur
+qualificationSelect.addEventListener("focus", () => {
+  qualificationTouched = true;
+});
+qualificationSelect.addEventListener("change", () => {
+  qualificationTouched = true;
+  validateQualification();
+});
+qualificationSelect.addEventListener("blur", () => {
+  if (qualificationTouched) validateQualification();
+});
+
+  // Live validation
+ firstNameInput.addEventListener("blur", () => validateName(firstNameInput, "First name"));
+ lastNameInput.addEventListener("blur", () => validateName(lastNameInput, "Last name"));
+ emailInput.addEventListener("blur", () => {
+   
+  
+  if (validateNotEmpty(emailInput, "Email")) validateEmail(emailInput);
+  });
+  countryInput.addEventListener("blur", () => validateCountry(countryInput));
+  cityInput.addEventListener("blur", () => validateCity(cityInput, countryInput));
+  phoneInput.addEventListener("blur", () => validatePhone(phoneInput));
+  //qualificationSelect.addEventListener("blur", () => validateNotEmpty(qualificationSelect, "Highest Qualification"));
+
+  [firstNameInput, lastNameInput, emailInput, countryInput, cityInput, phoneInput, qualificationSelect].forEach(input => {
+    input.addEventListener("input", () => clearError(input));
+  });
+
+  // Scroll to and highlight invalid input
+
+ function focusAndHighlight(input, message) {
+  showError(input, message); // show the error
+
+  // Determine what to scroll to (for checkbox/radio groups, scroll parent)
+  let scrollTarget = input;
+  if (input.type === "checkbox" || input.type === "radio" || input.id === "domainOptions" || input.id === "availability" || input.id === "languageOptions") {
+    scrollTarget = input.closest(".input-group") || input.parentElement;
+  }
+  // Scroll calculations
+  const navbarOffset = 140; // adjust slightly higher than your navbar
+  const elementPosition = scrollTarget.getBoundingClientRect().top + window.scrollY;
+  const offsetPosition = elementPosition - navbarOffset - 10; // extra padding
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth"
+  });
+
+  // Focus if applicable
+  if (input.focus) input.focus();
+
+  // Temporary highlight for visibility
+  const originalBg = scrollTarget.style.backgroundColor;
+  scrollTarget.style.backgroundColor = "#f8d7da"; // light red
+  setTimeout(() => {
+    scrollTarget.style.backgroundColor = originalBg;
+  }, 1200);
+}
+
+function focusAndHighlightSection(section, message) {
+  showErrorForSection(section, message);
+
+  // Scroll to the section
+  const navbarOffset = 140;
+  const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+  const offsetPosition = elementPosition - navbarOffset - 10;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth"
+  });
+
+  // Temporary highlight
+  const originalBg = section.style.backgroundColor;
+  section.style.backgroundColor = "#f8d7da"; // light red
+  setTimeout(() => {
+    section.style.backgroundColor = originalBg;
+  }, 1200);
+}
+
+function showToast(message, type = "success") {
+  const toast = document.getElementById("toastMessage");
+  toast.innerHTML = `
+    <div class="flex items-center gap-3 rounded-lg border px-6 py-4 shadow-lg
+      ${type === "success"
+        ? 'bg-green-50 border-green-200 text-green-900'
+        : 'bg-red-50 border-red-200 text-red-900'}">
+      ${type === "success"
+        ? `<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>`
+        : `<svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>`}
+      <span class="flex-1">${message}</span>
+      <button type="button" onclick="document.getElementById('toastMessage').classList.add('hidden')" class="ml-2 rounded p-1 hover:bg-gray-200" aria-label="Dismiss">
+        <svg class="w-5 h-5 text-gray-400 hover:text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  `;
+  toast.classList.remove("hidden");
+  // Auto-dismiss after 4 seconds for success, not for errors
+  if(type === "success") {
+    setTimeout(() => {
+      toast.classList.add("hidden");
+    }, 4000);
+  }
+}
+
+  // ----- Form Submission -----
+  document.getElementById("registrationForm").addEventListener("submit", async e => {
+  e.preventDefault();
+
+  // ----- Validate Personal Info -----
+  if (!validateName(firstNameInput, "First name")) {
+    focusAndHighlight(firstNameInput, "First name is required.");
+    return;
+  }
+  if (!validateName(lastNameInput, "Last name")) {
+    focusAndHighlight(lastNameInput, "Last name is required.");
+    return;
+  }
+  if (!validateNotEmpty(emailInput, "Email") || !validateEmail(emailInput)) {
+    focusAndHighlight(emailInput, "Please enter a valid email.");
+    return;
+  }
+  if (!validateCountry(countryInput)) {
+    focusAndHighlight(countryInput, "Please select a valid country.");
+    return;
+  }
+  if (!validateCity(cityInput, countryInput)) {
+    focusAndHighlight(cityInput, "Please enter a valid city for the selected country.");
+    return;
+  }
+  if (!validatePhone(phoneInput)) {
+    focusAndHighlight(phoneInput, "Please enter a valid phone number.");
+    return;
+  }
+
+ // ----- Validate Domain Expertise -----
+  const domainSection = document.getElementById("domainOptions");
+  clearErrorForSection(domainSection);
+  if (formData.domainExpertise.length === 0) {
+    focusAndHighlightSection(domainSection, "Please select at least one domain expertise.");
+    return;
+  }
+
+  
+  // ----- Validate Availability -----
+const availSection = document.getElementById("availability");
+clearErrorForSection(availSection);
+
+if (!validateAvailabilityPerDay(formData.availability)) {
+  // Scroll to the first invalid day
+  const firstInvalidDay = daysOfWeek.find(day => formData.availability[day].length === 0);
+  const firstDayWrapper = Array.from(availSection.children)
+    .find(el => el.querySelector("h4").textContent === firstInvalidDay);
+
+  const navbarOffset = 140;
+  const elementPosition = firstDayWrapper.getBoundingClientRect().top + window.scrollY;
+  const offsetPosition = elementPosition - navbarOffset - 10;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth"
+  });
+
+  return; // Stop form submission
+}
+
+  // ----- Validate Languages -----
+  const langSection = document.getElementById("languageOptions");
+  clearErrorForSection(langSection);
+  if (formData.languages.length === 0) {
+    focusAndHighlightSection(langSection, "Please select at least one language.");
+    return;
+  }
+
+  // ----- Validate Educational Qualifications -----
+formSubmitted = true;
+if (!validateQualification()) {
+  focusAndHighlight(qualificationSelect, "Please select your highest qualification.");
+  return;
+}
+clearError(qualificationSelect);
+
+  // ----- Prepare Data -----
+ const data = {
+  first_name: firstNameInput.value,
+  last_name: lastNameInput.value,
+  email: emailInput.value,
+  phone: phoneInput.value,
+  country: countryInput.value,
+  city: cityInput.value,
+  domain_expertise: formData.domainExpertise,
+  availability: formData.availability,
+  languages: formData.languages,
+  highest_qualification: qualificationSelect.value,
+  field_of_study: document.getElementById("fieldOfStudy").value || null,
+  institution: document.getElementById("institution").value || null,
+  graduation_year: document.getElementById("graduationYear").value
+    ? parseInt(document.getElementById("graduationYear").value, 10)
+    : null,
+  experience: document.getElementById("experience").value,
+  motivation: document.getElementById("motivation").value
+};
+
+  // ----- Submit to Supabase -----
+  try {
+  const response = await fetch('http://localhost:4000/api/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  const result = await response.json();
+  if (result.success) {
+    showToast(result.message, "success");
+    e.target.reset();
+    formData.domainExpertise = [];
+    formData.languages = [];
+    for (const day in formData.availability) formData.availability[day] = [];
+    renderSelectedDomains();
+    renderSelectedLanguages();
+    document.querySelectorAll("#availability input[type='checkbox']").forEach(cb => cb.checked = false);
+  } else {
+    showToast(result.message || "Registration failed.", "error");
+  }
+} catch (err) {
+  showToast("Server error. Please try again later.", "error");
+}
+});
+
+</script>
+
+  
+  <script>
+  // Mobile Menu Toggle
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden'); // force close
+    });
+  });
+
+  // Activate Lucide icons
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  }
+</script>
+
+
+<script>
+  // Smooth scroll with offset for fixed navbar
+  const navbarHeight = 128; // same as your nav h-32
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        const elementPosition = targetElement.offsetTop;
+        const offsetPosition = elementPosition - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+</script>
+
+<script>
+// Disable Enter key from prematurely submitting the form
+document.getElementById("registrationForm").addEventListener("keydown", function (e) {
+  if (e.key === "Enter" && e.target.tagName.toLowerCase() !== "textarea") {
+    e.preventDefault(); // prevent form submit
+    // Find next input element and focus it
+    const focusable = Array.from(this.querySelectorAll("input, select, textarea"));
+    const index = focusable.indexOf(e.target);
+    if (index > -1 && index + 1 < focusable.length) {
+      focusable[index + 1].focus();
+    }
+  }
+});
+</script>
+<!-- Toast Notification (Fixed, Top Center, Always Visible) -->
+<div id="toastMessage" class="hidden fixed top-6 left-1/2 z-50 transform -translate-x-1/2 transition-all"></div>
+
+<!-- Privacy Policy Popup Modal -->
+<div id="privacy-modal"
+     class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-xl shadow-xl p-8 max-w-md w-full text-center">
+    <h2 class="text-2xl font-bold mb-4 text-blue-800">Privacy Policy</h2>
+    <p class="text-gray-700 mb-8">
+      Our Privacy Policy is currently being finalized to ensure compliance with applicable data protection and privacy regulations.<br>
+      It will be published here once approved.<br>
+      In the meantime, please rest assured that your personal information will be handled responsibly and with the highest level of confidentiality.
+    </p>
+    <button id="close-modal" class="bg-blue-700 hover:bg-blue-900 text-white rounded-lg px-6 py-2 font-semibold">
+      Close
+    </button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const privacyLink = document.getElementById("privacy-link");
+    const modal = document.getElementById("privacy-modal");
+    const closeBtn = document.getElementById("close-modal");
+
+    privacyLink.addEventListener("click", function(e) {
+      e.preventDefault();
+      modal.classList.remove("hidden");
+    });
+
+    closeBtn.addEventListener("click", function() {
+      modal.classList.add("hidden");
+    });
+
+    // Optional: close when clicking outside the modal box
+    modal.addEventListener("click", function(e) {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
+
+
+
+

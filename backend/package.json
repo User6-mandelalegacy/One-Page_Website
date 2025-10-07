@@ -1,0 +1,27 @@
+{
+  "name": "one-page_website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/User6-mandelalegacy/One-Page_Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/User6-mandelalegacy/One-Page_Website/issues"
+  },
+  "homepage": "https://github.com/User6-mandelalegacy/One-Page_Website#readme",
+  "description": "",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "resend": "^6.1.2"
+  }
+}
