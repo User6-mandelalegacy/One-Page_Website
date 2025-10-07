@@ -43,7 +43,7 @@ try {
       <p>We look forward to working together to build a just and inclusive AI future!</p>
       <p>Warm regards,<br>
       Mandela Legacy Team</p>
-      <p>Website: <a href="https://mandelalegacy.com">https://mandelalegacy.com</a></p>e 
+      <p>Website: <a href="https://mandelalegacy.com">https://mandelalegacy.com</a></p> 
     `
   });
   console.log('Resend email result:', emailResult);
