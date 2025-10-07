@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');          // <-- ADD THIS LINE
 const { createClient } = require('@supabase/supabase-js');
 const { Resend } = require('resend');
 require('dotenv').config();
@@ -7,6 +8,9 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// <-- ADD THIS LINE BELOW THE MIDDLEWARES
+app.use(express.static(path.join(__dirname, '..')));
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -53,9 +57,9 @@ try {
   }
 });
 
-// ---- ADDED THIS ROUTE FOR HEALTH CHECK ----
+// <-- REPLACE OLD ROOT ROUTE WITH THIS
 app.get('/', (req, res) => {
-  res.send('Server is running!');
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
