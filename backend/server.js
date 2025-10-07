@@ -11,6 +11,9 @@ app.use(express.json());
 
 // <-- ADD THIS LINE BELOW THE MIDDLEWARES
 app.use(express.static(path.join(__dirname, '..')));
+app.get('/DCA', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'full-register.html')); // Adjust the path as necessary
+});
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
