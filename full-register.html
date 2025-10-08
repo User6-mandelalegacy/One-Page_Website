@@ -785,21 +785,25 @@ function validateAvailabilityPerDay(availability) {
     if (prevError) prevError.remove();
     dayWrapper.style.backgroundColor = ""; // reset highlight
 
-    if (!availability[day] || availability[day].length === 0) {
-      allDaysValid = false;
+    // Only require Monday to Friday
+    if (["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].includes(day)) {
+      if (!availability[day] || availability[day].length === 0) {
+        allDaysValid = false;
 
-      // Show error for the specific day
-      const errorSpan = document.createElement("span");
-      errorSpan.className = "error-message text-red-500 text-sm block mt-1";
-      errorSpan.textContent = `Please select at least one time slot for ${day}.`;
-      dayWrapper.appendChild(errorSpan);
+        // Show error for the specific day
+        const errorSpan = document.createElement("span");
+        errorSpan.className = "error-message text-red-500 text-sm block mt-1";
+        errorSpan.textContent = `Please select at least one time slot for ${day}.`;
+        dayWrapper.appendChild(errorSpan);
 
-      // Highlight the day
-      dayWrapper.style.backgroundColor = "#f8d7da"; // light red
-      setTimeout(() => {
-        dayWrapper.style.backgroundColor = "";
-      }, 1200);
+        // Highlight the day
+        dayWrapper.style.backgroundColor = "#f8d7da"; // light red
+        setTimeout(() => {
+          dayWrapper.style.backgroundColor = "";
+        }, 1200);
+      }
     }
+    // For Saturday/Sunday, do nothing (optional)
   });
 
   return allDaysValid;
